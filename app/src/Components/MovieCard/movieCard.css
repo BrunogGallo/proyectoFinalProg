@@ -1,0 +1,19 @@
+.movie-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    background-color: grey;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.movie-card img{
+    width: 60%;
+}
+
+.movie-card h2 {
+    width: 100%;
+}
