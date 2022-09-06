@@ -26,7 +26,6 @@ class Home extends Component {
         return (
             <React.Fragment>
 
-                Banner
                 <section className='movie-container'>
 
                     

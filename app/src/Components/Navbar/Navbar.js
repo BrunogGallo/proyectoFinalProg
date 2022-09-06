@@ -21,7 +21,7 @@ class Navbar extends Component {
         return (
             <React.Fragment>
                     <form onSubmit={e => this.evitarSubmit(e)}>
-                        <input type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
+                        <input placeholder = "Ingresa tu busqueda" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
                         <Link to={`/searchResults/${this.state.valor}`}>
                              <button> Buscar</button>
                         </Link>
