@@ -3,7 +3,11 @@
     background-color: black;
 }
 
-img {
-    width: 5%;
-    border-radius: 20px;
+
+
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
