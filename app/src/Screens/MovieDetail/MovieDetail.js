@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function MovieDetail () {
-    return (
-        <p>Hola</p>
-    )
+class MovieDetail extends Component {
+
+    constructor () {
+        super ();
+    }
+
+    fetchApi () {
+        
+    }
+    render () {
+        return(
+            <p>Hola</p>
+        )
+    }
 }
 
 export default MovieDetail
