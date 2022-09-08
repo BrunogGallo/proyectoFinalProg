@@ -1,12 +1,12 @@
 .movie-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 30%;
+    width: 28%;
     background-color: grey;
     padding: 10px;
     margin-bottom: 20px;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
@@ -16,4 +16,23 @@
 
 .movie-card h2 {
     width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.movie-card p{
+    text-decoration: none;
+}
+
+.movie-card:hover,
+.active{
+box-shadow: 0rem 0rem 10px 10px rgba(255, 255, 255, 0.25);
+}
+
+.movie-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
 }
