@@ -20,12 +20,25 @@ class Navbar extends Component {
     render() {
         return (
             <React.Fragment>
-                    <form onSubmit={e => this.evitarSubmit(e)}>
-                        <input placeholder = "Ingresa tu busqueda" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
-                        <Link to={`/searchResults/${this.state.valor}`}>
-                             <button> Buscar</button>
-                        </Link>
-                    </form>
+                <nav>
+                    <ul className="main-nav">
+                        <li>
+                            <Link to='/'>Home</Link>
+                        </li>
+                        <li>
+                            <Link to='/favorites'>Favoritos</Link>
+                        </li>
+                        <li>
+                            <form onSubmit={e => this.evitarSubmit(e)}>
+                                <input placeholder = "Ingresa tu busqueda" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
+                                <Link to={`/searchResults/${this.state.valor}`}>
+                                    <button> Buscar</button>
+                                </Link>
+                            </form>
+                        </li>
+                        
+                    </ul>
+                </nav>
             </React.Fragment>
         )
     }
