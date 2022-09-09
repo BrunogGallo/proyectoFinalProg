@@ -13,7 +13,7 @@ class Favorites extends Component {
     }
 
     componentDidMount() {
-        let recuperoFavs = localStorage.getItem('favorites');
+        let recuperoFavs = localStorage.getItem('favoritos');
         let favs = [];
 
         if(recuperoFavs !== null){
@@ -28,7 +28,6 @@ class Favorites extends Component {
                 .then( response => response.json())
                 .then( data => {
                     favs.push(data);
-                    console.log(this.state.movies.length);
     
                     this.setState({
                         movies: movies
@@ -38,7 +37,6 @@ class Favorites extends Component {
         
             });
             
-            console.log(movies);
 
         }
 
