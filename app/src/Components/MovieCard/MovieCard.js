@@ -17,6 +17,7 @@ class MovieCard extends Component {
 
         let favoritos = [];
 
+
         let recuperoStorage = localStorage.getItem('favoritos'); // Esta posicion puede no estar.
 
         if (recuperoStorage !== null){
@@ -90,12 +91,15 @@ class MovieCard extends Component {
         return (
             <React.Fragment>
 
-                <article className="movie-card">
-                    <Link className="movie-content" to={`movie/id/${[this.props.movieData.id]}`}>
+            <article className="movie-card">
+                <Link className="movie-content" to={`movie/id/${this.props.movieData.id}`}>
                     <img src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
-                        <h2>{this.props.movieData.title}</h2>
+                    <h2>{this.props.movieData.title}</h2>
                     <p>{this.state.description}</p>
-                    </Link>
+                </Link>
+                        
+
+
                         {
                             this.state.description === ''
                                 ? <p onClick={() => this.verMas()}>Mostrar mas</p>

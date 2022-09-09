@@ -14,7 +14,6 @@ class Favorites extends Component {
 
     componentDidMount() {
         let recuperoFavs = localStorage.getItem('favoritos');
-        let favs = [];
 
         if(recuperoFavs !== null){
             
@@ -27,11 +26,12 @@ class Favorites extends Component {
                 fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=cbe0b85cca8ab920f1387b58d1b0ce3a`)
                 .then( response => response.json())
                 .then( data => {
-                    favs.push(data);
-    
+                    movies.push(data);
+                    
                     this.setState({
                         movies: movies
                     });
+                    console.log(movies);
                 })
                 .catch(error => console.log(error))
         
@@ -49,11 +49,12 @@ class Favorites extends Component {
             <div>
 
                 <h2>Favoritos</h2>
-                <section>
-                {
-                        this.state.movies.map((data, id) => <MovieCard key={data + '_' + id} data={data} />)
+                <section className='movie-container'>
+                    {
+                        this.state.movies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                     }
                 </section>
+                
 
             </div>
         )
