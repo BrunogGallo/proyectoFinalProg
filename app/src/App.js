@@ -17,7 +17,6 @@ function App() {
         <Switch>
           <Route path='/' exact={true} component={Home} />
           <Route path='/movie' exact={true} component={Movies} />
-          <Route path='/movie?' exact={true} component={Movies} />
           <Route path='/movie/id/:id' exact={true} component={MovieDetail} />
           <Route path='/favorites' exact={true} component={Favorites} />
           <Route path='/searchResults/:param?' exact={true} render={(props) => (
