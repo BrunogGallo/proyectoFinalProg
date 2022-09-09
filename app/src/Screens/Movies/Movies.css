@@ -1,0 +1,18 @@
+.top-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.top-content button {
+    width: fit-content;
+    align-self: center;
+}
+
+.top-content p{
+    background-color: grey;
+    border-radius: 2px;
+    padding: 1px;
+    margin-left: 5px;
+}
