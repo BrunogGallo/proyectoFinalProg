@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+
 
 function NotFound () {
     return (
-        <h1> PARECE QUE TU PÁGINA SE PERDIO</h1>
+        <section className='404'>
+            <img src='./img/notfound.png' alt='Error 404 Not Found' className='img404'/>
+        </section>
     )
 }
 

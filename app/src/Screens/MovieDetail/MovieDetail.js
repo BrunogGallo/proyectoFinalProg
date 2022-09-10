@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import loader from '../../loader.gif'
 
 
 
@@ -12,7 +13,8 @@ class MovieDetail extends Component {
                 genres: [
                     {name: ""}
                 ]
-            }
+            },
+            loader: true
         }
     }
 
@@ -22,13 +24,17 @@ class MovieDetail extends Component {
             .then(data => {
                 this.setState({
                     movies: data, 
+                    loader: false
                 }, ()=> console.log(this.state.movies))
             })
     }
 
     render() {
         return (
-            <React.Fragment>
+            this.state.loader === true ? 
+
+            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
+            : <React.Fragment>
                 //si es una serie tiene que decir una cosa, si es una pelicula otra. 
                 <img src={`https://image.tmdb.org/t/p/w780/${this.state.movies.poster_path}`} alt="foto" />
                 <h2>{this.state.movies.title}</h2>

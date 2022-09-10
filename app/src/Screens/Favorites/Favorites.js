@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MovieCard from '../../Components/MovieCard/MovieCard'
+import loader from '../../loader.gif'
 
 
 class Favorites extends Component {
@@ -8,6 +9,7 @@ class Favorites extends Component {
         super()
         this.state = {
             movies: [],
+            loader: true
             
         }
     }
@@ -29,7 +31,8 @@ class Favorites extends Component {
                     movies.push(data);
                     
                     this.setState({
-                        movies: movies
+                        movies: movies,
+                        loader: false
                     });
                     console.log(movies);
                 })
@@ -46,7 +49,10 @@ class Favorites extends Component {
     render() {
 
         return (
-            <div>
+            this.state.loader === true ? 
+
+            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
+            : <div>
 
                 <h2>Favoritos</h2>
                 <section className='movie-container'>

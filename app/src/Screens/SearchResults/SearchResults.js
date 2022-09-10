@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieCard from '../../Components/MovieCard/MovieCard';
+import loader from '../../loader.gif'
 
 class SearchResults extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class SearchResults extends Component {
         return (
             // quiero chequear que 
             <React.Fragment>
-                {this.state.loader ? (<h1> Loading</h1>) : (
+                {this.state.loader ? (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />) : (
                 
                 <div className='movie-container'>
                     {this.state.resultMovies.length === 0 &&

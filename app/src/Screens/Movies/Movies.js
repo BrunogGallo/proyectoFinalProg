@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MovieCard from "../../Components/MovieCard/MovieCard";
 import './Movies.css'
+import loader from '../../loader.gif'
 
 class Movies extends Component {
 
@@ -9,6 +10,7 @@ class Movies extends Component {
         this.state = {
             movies: [],
             counter: 1,
+            loader: true
         }
     }
 
@@ -17,7 +19,8 @@ class Movies extends Component {
             .then(res => res.json())
             .then(data => this.setState({
                 movies: data.results,
-                counter: this.state.counter + 1
+                counter: this.state.counter + 1,
+                loader: false
             }))
             .catch(er => console.log(er))
     }
@@ -29,14 +32,19 @@ class Movies extends Component {
             .then(res => res.json())
             .then(data => this.setState({
                 movies: data.results,
-                counter: this.state.counter + 1
+                counter: this.state.counter + 1,
+                loader: false
             }))
             .catch(er => console.log(er))
     }
 
     render() {
         return (
-            <React.Fragment>
+            
+            this.state.loader === true ? 
+
+            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
+            : <React.Fragment>
 
                     <h1>Todas las Peliculas</h1>
                 <section className="top-content">
@@ -56,6 +64,8 @@ class Movies extends Component {
                 </section>
 
             </React.Fragment>
+            
+            
 
         )
     }

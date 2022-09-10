@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MovieCard from '../../Components/MovieCard/MovieCard'
-import './home.css'
+import './home.css';
+import loader from '../../loader.gif'
 
 
 class Home extends Component {
@@ -12,7 +13,8 @@ class Home extends Component {
             popularMovies: [],
             topRatedMovies: [],
             popularSeries: [],
-            topRatedSeries: [], 
+            topRatedSeries: [],
+            loader: true
         }
     }
 
@@ -21,12 +23,14 @@ class Home extends Component {
             .then(res => res.json())
             .then(data => this.setState({
                 popularMovies: data.results,
+                loader: false
             }))
 
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
             .then(res => res.json())
             .then(data => this.setState({
-                topRatedMovies: data.results
+                topRatedMovies: data.results,
+                loader: false
             }))
         // fetch('https://api.themoviedb.org/3/tv/popular?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
         //     .then(res => res.json())
@@ -44,7 +48,11 @@ class Home extends Component {
     render() {
 
         return (
-            <React.Fragment>
+            
+            this.state.loader === true ? 
+
+            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgload' />)
+            :<React.Fragment>
 
                 <h1>Peliculas Populares</h1>
                 <section className='movie-container'>
