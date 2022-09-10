@@ -16,3 +16,15 @@
     padding: 1px;
     margin-left: 5px;
 }
+
+.imgLoader{
+    min-height: 100%;
+    min-width: 800px;
+    
+    width: 100%;
+    height: auto;
+    
+    position:absolute;
+    top: 0;
+    left: 0;
+    }

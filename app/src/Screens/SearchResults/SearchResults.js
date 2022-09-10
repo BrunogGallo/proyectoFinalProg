@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieCard from '../../Components/MovieCard/MovieCard';
-import loader from '../../loader.gif'
+import loader from '../../loader.gif';
+import './searchresults.css'
 
 class SearchResults extends Component {
     constructor(props) {

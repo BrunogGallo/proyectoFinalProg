@@ -51,7 +51,7 @@ class Home extends Component {
             
             this.state.loader === true ? 
 
-            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgload' />)
+            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
             :<React.Fragment>
 
                 <h1>Peliculas Populares</h1>
