@@ -24,7 +24,7 @@ function App() {
           <Route path='/searchResults/:param?' exact={true} render={(props) => (
             <SearchResults key={props.match.params.param} {...props} />
           )} />
-          <Route path='/404' component={NotFound} />
+          <Route path='' component={NotFound} />
         </Switch>
       </main>
       <Footer />
