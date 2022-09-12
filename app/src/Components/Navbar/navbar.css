@@ -2,3 +2,8 @@
     display: flex;
 
 }
+
+.logo {
+    width: 4%;
+    border-radius: 8px;
+}
