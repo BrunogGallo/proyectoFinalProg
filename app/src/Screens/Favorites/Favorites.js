@@ -31,7 +31,6 @@ class Favorites extends Component {
                 .then( response => response.json())
                 .then( data => {
                     movies.push(data);
-                    
                     this.setState({
                         movies: movies,
                         loader: false
@@ -51,13 +50,17 @@ class Favorites extends Component {
     render() {
 
         return (
-            this.state.loader === true ? 
-
-            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
+            this.state.loader ? 
+            <div>
+                <p>No Tienes Favoritos</p>
+                <img src={loader} alt="aguarde mientras carga la pagina"  />
+            </div>
+            
             : <div>
 
                 <h2>Favoritos</h2>
                 <section className='movie-container'>
+                    
                     {
                         this.state.movies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                     }

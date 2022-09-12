@@ -21,18 +21,23 @@ class Navbar extends Component {
     render() {
         return (
             <div className="navbar">
-                <div className="links">
-                    <Link to="/"> Home </Link>
-                    <Link to="/movie"> Ver todas las peliculas</Link>
-                    <Link to="/favorites"> Mis favoritas</Link>
-                </div>
-                    <form className="search-bar"onSubmit={e => this.evitarSubmit(e)}>
+                <img className="logo" src={'/img/logo.jpg'} alt='logo'/>
+                <ul className="links">
+                    <li><Link to="/"> Home </Link></li>
+                    <li><Link to="/popular"> Populares</Link></li>
+                    <li><Link to="/top-rated">Top Ranking</Link></li>
+                    <li><Link to="/favorites"> Mis Favoritas</Link></li>
+                    <li> 
+                    <form className="search-bar" onSubmit={e => this.evitarSubmit(e)}>
                         <input className="search-bar_input" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
                         <Link to={`/searchResults/${this.state.valor}`}>
                             <button className="search-bar_submit">            <i id="icono_navbar" class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </Link>
                     </form>
+
+                    </li>
+                </ul>                   
             </div>
         )
     }

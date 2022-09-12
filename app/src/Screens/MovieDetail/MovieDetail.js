@@ -15,7 +15,9 @@ class MovieDetail extends Component {
                     {name: ""}
                 ]
             },
-            loader: true
+            loader: true,
+            favsMessage: 'Agregar a favoritos',
+
         }
     }
 
@@ -28,6 +30,49 @@ class MovieDetail extends Component {
                     loader: false
                 }, ()=> console.log(this.state.movies))
             })
+    
+    }
+    agregarYQuitarFavoritos(id) {
+        // vamos a guardar ids en un array dentro de localStorage.
+        //console.log('Agregando y sacando favs');
+
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos'); // Esta posicion puede no estar.
+
+        if (recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage); //transforma texto en array.
+
+            favoritos = storageToArray
+        }
+
+
+
+        if (favoritos.includes(id)) { // includes retorna true o false.
+            // Cambiar el texto del boton a Quitar de favoritos.
+            // Sacar el id del array: usamos filter.
+            favoritos = favoritos.filter(cadaIdDelArray => cadaIdDelArray !== id)
+            this.setState({
+                favsMessage: 'Agregar a favoritos',
+            },
+            ()=> window.location.reload(false)
+            )
+            
+        } else {
+            favoritos.push(id);
+            this.setState({
+                favsMessage: 'Quitar de favoritos',
+            })
+        }
+
+
+
+        let favsToString = JSON.stringify(favoritos);
+        localStorage.setItem('favoritos', favsToString)
+
+        console.log(localStorage);
+
+
     }
 
     render() {
@@ -46,7 +91,7 @@ class MovieDetail extends Component {
                     {this.state.movies.genres.map ((genre, idx) => (<li key={genre.id + idx}> {genre.name}</li> ))}
                 </p>
                 <p>Mostrar mas</p>
-                <button>Añadir a favoritos</button>
+                <button onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
             </React.Fragment>
         )
     }
