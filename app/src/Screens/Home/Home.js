@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MovieCard from '../../Components/MovieCard/MovieCard'
 import './home.css';
 import loader from '../../loader.gif'
+import { Link } from "react-router-dom";
 
 
 class Home extends Component {
@@ -32,17 +33,6 @@ class Home extends Component {
                 topRatedMovies: data.results,
                 loader: false
             }))
-        // fetch('https://api.themoviedb.org/3/tv/popular?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
-        //     .then(res => res.json())
-        //     .then(data => this.setState({
-        //         popularSeries: data.results,
-        //         tituloSerie: data.results.name
-        //     }))
-        // fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
-        //     .then(res => res.json())
-        //     .then(data => this.setState({
-        //         topRatedSeries: data.results
-        //     }))
     }
 
     render() {
@@ -55,31 +45,19 @@ class Home extends Component {
             :<React.Fragment>
 
                 <h1>Peliculas Populares</h1>
+                <Link to="/popular"> Ver Todas</Link>
                 <section className='movie-container'>
                     {
                         this.state.popularMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                     }
                 </section>
                 <h1>Lo Mejor en Peliculas</h1>
+                <Link to="/top-rated"> Ver Todas</Link>
                 <section className='movie-container'>
                     {
                         this.state.topRatedMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                     }
                 </section>
-
-                {/* <h1>Series Populares</h1>
-                <section className='movie-container'>
-                    {
-                        this.state.popularSeries.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} title={this.state.seriesTitle}/>)
-                    }
-                </section>
-                <h1>Lo Mejor en Series</h1>
-                <section className='movie-container'>
-                    {
-                        this.state.topRatedSeries.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
-                    }
-                </section> */}
-
 
             </React.Fragment>
         )

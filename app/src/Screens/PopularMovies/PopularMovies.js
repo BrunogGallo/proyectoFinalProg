@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import MovieCard from "../../Components/MovieCard/MovieCard";
-import './Movies.css'
+import './PopularMovies.css'
 import loader from '../../loader.gif'
 
-class Movies extends Component {
+class PopularMovies extends Component {
 
     constructor() {
         super()
@@ -46,7 +46,7 @@ class Movies extends Component {
             (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
             : <React.Fragment>
 
-                    <h1>Todas las Peliculas</h1>
+                    <h1>Todas las Peliculas Populares</h1>
                 <section className="top-content">
                     <button className="more" onClick={() => this.buscarMas()}>Buscar Mas</button>
                     <p>Pagina {this.state.counter - 1}</p>
@@ -71,4 +71,4 @@ class Movies extends Component {
     }
 }
 
-export default Movies
+export default PopularMovies
