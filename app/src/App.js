@@ -10,6 +10,7 @@ import SearchResults from './Screens/SearchResults/SearchResults';
 import PopularMovies from './Screens/PopularMovies/PopularMovies';
 import TopRatedMovies from './Screens/TopRatedMovies/TopRatedMovies';
 
+
 function App() {
   return (
     <React.Fragment>

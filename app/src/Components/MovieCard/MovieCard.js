@@ -102,8 +102,8 @@ class MovieCard extends Component {
                     </Link>
                     {
                         this.state.description === ''
-                            ? <p onClick={() => this.verMas()}>Mostrar mas</p>
-                            : <p onClick={() => this.verMenos()}>Mostrar menos</p>
+                            ? <p className="centrar" onClick={() => this.verMas()}>Mostrar mas</p>
+                            : <p className="centrar" onClick={() => this.verMenos()}>Mostrar menos</p>
 
                     }
                     <button onClick={() => this.agregarYQuitarFavoritos(this.props.movieData.id)}>{this.state.favsMessage}</button>

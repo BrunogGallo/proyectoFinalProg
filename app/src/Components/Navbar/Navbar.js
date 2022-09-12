@@ -26,15 +26,13 @@ class Navbar extends Component {
                     <Link to="/movie"> Ver todas las peliculas</Link>
                     <Link to="/favorites"> Mis favoritas</Link>
                 </div>
-
-                <div>
-                    <form onSubmit={e => this.evitarSubmit(e)}>
-                        <input placeholder="Ingresa tu busqueda" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
+                    <form className="search-bar"onSubmit={e => this.evitarSubmit(e)}>
+                        <input className="search-bar_input" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
                         <Link to={`/searchResults/${this.state.valor}`}>
-                            <button> Buscar</button>
+                            <button className="search-bar_submit">            <i id="icono_navbar" class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </Link>
                     </form>
-                </div>
             </div>
         )
     }
