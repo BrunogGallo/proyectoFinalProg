@@ -1,0 +1,19 @@
+.logo {
+    width: 4%;
+    border-radius: 8px;
+    margin: 0px 20px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer p {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px;
+}
