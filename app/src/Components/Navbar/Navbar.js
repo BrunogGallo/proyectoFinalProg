@@ -22,21 +22,25 @@ class Navbar extends Component {
         return (
             <div className="navbar">
                 <img className="logo" src={'/img/logo.jpg'} alt='logo'/>
-                <div className="links">
-                    <Link to="/"> Home </Link>
-                    <Link to="/popular"> Ver Todas las Populares</Link>
-                    <Link to="/top-rated"> Ver las Mejores Calificadas</Link>
-                    <Link to="/favorites"> Mis Favoritas</Link>
-                </div>
+                <ul className="links">
+                    <li><Link to="/"> <a>Home</a> </Link></li>
+                    <li><Link to="/popular"> <a>Populares</a></Link></li>
+                    <li><Link to="/top-rated"><a>Top Ranking</a></Link></li>
+                    <li><Link to="/favorites"> <a>Mis Favoritas</a></Link></li>
+                    <li>
+                        <form onSubmit={e => this.evitarSubmit(e)}>
+                            <input className="CuadrodeBusqueda" placeholder="Ingresa tu busqueda" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
+                            <Link to={`/searchResults/${this.state.valor}`}>
+                                <button className="button"> Buscar</button>
+                            </Link>
+                        </form>
+                    </li>
+                        
+                    
+                
+                </ul>
 
-                <div>
-                    <form onSubmit={e => this.evitarSubmit(e)}>
-                        <input placeholder="Ingresa tu busqueda" type='text' onChange={e => this.cambiarDatos(e)} value={this.state.valor}></input>
-                        <Link to={`/searchResults/${this.state.valor}`}>
-                            <button> Buscar</button>
-                        </Link>
-                    </form>
-                </div>
+               
             </div>
         )
     }
