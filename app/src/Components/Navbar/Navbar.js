@@ -21,10 +21,12 @@ class Navbar extends Component {
     render() {
         return (
             <div className="navbar">
+                <img className="logo" src={'/img/logo.jpg'} alt='logo'/>
                 <div className="links">
                     <Link to="/"> Home </Link>
-                    <Link to="/movie"> Ver todas las peliculas</Link>
-                    <Link to="/favorites"> Mis favoritas</Link>
+                    <Link to="/popular"> Ver Todas las Populares</Link>
+                    <Link to="/top-rated"> Ver las Mejores Calificadas</Link>
+                    <Link to="/favorites"> Mis Favoritas</Link>
                 </div>
 
                 <div>
