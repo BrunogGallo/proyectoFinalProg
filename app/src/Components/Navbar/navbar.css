@@ -5,6 +5,7 @@
     margin-top: 0.9%;
     font-family: 'Work Sans', sans-serif; 
     align-items: center;
+    justify-content: space-around;
 }
 .search-bar {
     width: 16%;

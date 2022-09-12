@@ -24,6 +24,11 @@
     text-decoration: none;
 }
 
+.centrar:hover{
+    color: white;
+}
+
+
 .movie-card:hover,
 .active{
 box-shadow: 0rem 0rem 10px 10px rgba(255, 255, 255, 0.25);
