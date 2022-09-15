@@ -3,6 +3,7 @@ import MovieCard from '../../Components/MovieCard/MovieCard'
 import './home.css';
 import loader from '../../loader.gif'
 import { Link } from "react-router-dom";
+import TarjetaPeli from '../../Components/pelitest/TarjetaPelicula';
 
 
 class Home extends Component {
@@ -45,19 +46,21 @@ class Home extends Component {
             :<React.Fragment>
 
                 <h1>Peliculas Populares</h1>
-                <Link to="/popular"> Ver Todas</Link>
+                
                 <section className='movie-container'>
                     {
                         this.state.popularMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                     }
                 </section>
+                <Link to="/popular"><button className='button'> Ver Todas</button></Link>
                 <h1>Lo Mejor en Peliculas</h1>
-                <Link to="/top-rated"> Ver Todas</Link>
+                
                 <section className='movie-container'>
                     {
                         this.state.topRatedMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                     }
                 </section>
+               <Link  to="/top-rated"> <button className='button'> Ver Todas</button></Link>
 
             </React.Fragment>
         )

@@ -1,9 +1,11 @@
 *{
-    color: lightgray;
+    color: white;
     background-color: rgb(16, 15, 19);
 }
 
-
+h1{
+    padding-left: 1.5%;
+}
 
 .movie-container {
     display: flex;
@@ -23,4 +25,30 @@ position:absolute;
 top: 0;
 left: 0;
 }
+
+.button {
+    background-color: white; 
+    color: black; 
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 600px;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    border-radius: 8px;
+    
+    
+}
+
+
+.button:hover {
+    background-color: #f44336;
+    color: white;
+}
+
 
