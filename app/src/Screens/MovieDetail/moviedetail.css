@@ -8,4 +8,30 @@
     position:absolute;
     top: 0;
     left: 0;
-    }
+}
+
+.movie-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: grey;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.movie-poster {
+    width: 45%;
+    text-align: center;
+    background-color: rgb(85, 84, 84);
+    border-radius: 8px;
+}
+.movie-poster img{
+    width: 50%;
+}
+
+.movie-data {
+    text-align: center;
+    width: 50%;
+    border-radius: 8px;
+}
