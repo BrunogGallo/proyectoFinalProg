@@ -25,6 +25,8 @@ class PopularMovies extends Component {
             .catch(er => console.log(er))
     }
 
+    buscarMenos
+
 
 
     buscarMas() {
