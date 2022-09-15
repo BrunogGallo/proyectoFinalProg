@@ -39,30 +39,33 @@ class Home extends Component {
     render() {
 
         return (
-            
-            this.state.loader === true ? 
 
-            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
-            :<React.Fragment>
+            this.state.loader === true ?
 
-                <h1>Peliculas Populares</h1>
-                
-                <section className='movie-container'>
-                    {
-                        this.state.popularMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
-                    }
-                </section>
-                <Link to="/popular"><button className='button'> Ver Todas</button></Link>
-                <h1>Lo Mejor en Peliculas</h1>
-                
-                <section className='movie-container'>
-                    {
-                        this.state.topRatedMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
-                    }
-                </section>
-               <Link  to="/top-rated"> <button className='button'> Ver Todas</button></Link>
+                (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
+                : <React.Fragment>
 
-            </React.Fragment>
+                    <h1>Peliculas Populares</h1>
+                    
+                    <section className='movie-container'>
+                        {
+                            this.state.popularMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                        }
+                    </section>
+                    <Link to="/popular">
+                        <p className='button'>Ver Todas</p>
+                    </Link>
+                    <h1>Lo Mejor en Peliculas</h1>
+                    
+                    <section className='movie-container'>
+                        {
+                            this.state.topRatedMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                        }
+                    </section>
+                    <Link to="/top-rated">
+                        <p className='button'>Ver Todas</p>
+                    </Link>
+                </React.Fragment>
         )
     }
 }

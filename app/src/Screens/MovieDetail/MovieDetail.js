@@ -12,7 +12,7 @@ class MovieDetail extends Component {
             id: this.props.match.params.id,
             movies: {
                 genres: [
-                    {name: ""}
+                    { name: "" }
                 ]
             },
             loader: true,
@@ -26,11 +26,11 @@ class MovieDetail extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    movies: data, 
+                    movies: data,
                     loader: false
-                }, ()=> console.log(this.state.movies))
+                }, () => console.log(this.state.movies))
             })
-    
+
     }
     agregarYQuitarFavoritos(id) {
         // vamos a guardar ids en un array dentro de localStorage.
@@ -55,9 +55,9 @@ class MovieDetail extends Component {
             this.setState({
                 favsMessage: 'Agregar a favoritos',
             },
-            ()=> window.location.reload(false)
+                () => window.location.reload(false)
             )
-            
+
         } else {
             favoritos.push(id);
             this.setState({
@@ -77,22 +77,31 @@ class MovieDetail extends Component {
 
     render() {
         return (
-            this.state.loader === true ? 
+            this.state.loader === true ?
 
-            (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
-            : <React.Fragment>
-                //si es una serie tiene que decir una cosa, si es una pelicula otra. 
-                <img src={`https://image.tmdb.org/t/p/w780/${this.state.movies.poster_path}`} alt="foto" />
-                <h2>{this.state.movies.title}</h2>
-                <h4> El rating es: {this.state.movies.vote_average}, según la página oficial de IMDB</h4>
-                <h4> Se estrenó el {this.state.movies.release_date}</h4>
-                <h4> Duración: {this.state.movies.runtime} minutos</h4>
-                <p> Géneros:
-                    {this.state.movies.genres.map ((genre, idx) => (<li key={genre.id + idx}> {genre.name}</li> ))}
-                </p>
-                <p>Mostrar mas</p>
-                <button onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
-            </React.Fragment>
+                (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
+                : <React.Fragment>
+                    <main className='movie-content'>
+                        <div className='movie-poster'>
+                            <img src={`https://image.tmdb.org/t/p/w780/${this.state.movies.poster_path}`} alt="foto" /> </div>
+
+                        <div className='movie-data'>
+                            <h2>{this.state.movies.title}</h2>
+                            <p> Rating: {this.state.movies.vote_average}, según la página oficial de IMDB</p>
+                            <p> Fecha de estreno: {this.state.movies.release_date}</p>
+                            <p> Duración: {this.state.movies.runtime} minutos</p>
+                            <p> Géneros: </p> 
+                            <ul>
+                                {this.state.movies.genres.map((genre, idx) => (
+                                    <li key={genre.id + idx}> {`| ${genre.name} |`} </li>
+                                ))
+                                }
+                            </ul>
+                            <p>{this.state.movies.overview}</p>
+                            <button onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
+                        </div>
+                    </main>
+                </React.Fragment>
         )
     }
 }

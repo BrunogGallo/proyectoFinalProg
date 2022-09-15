@@ -7,6 +7,13 @@ h1{
     padding-left: 1.5%;
 }
 
+.all-button:hover {
+    color: white;
+}
+
+.all-button {
+    width: fit-content;
+}
 .movie-container {
     display: flex;
     flex-direction: row;
