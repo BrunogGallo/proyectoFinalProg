@@ -40,6 +40,8 @@
     border: none;
     outline: none;
     background-color: darkgray;
+    margin-top: -12px;
+
 }
 
 #icono_navbar {
@@ -87,11 +89,13 @@ li {
 
 li a {
     display: block;
-    color: lightgray;
+    color: rgb(153, 170, 187);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: rgb(14, 13, 19)
+    background-color: rgb(14, 13, 19);
+    letter-spacing: .07em;
+
 }
 
 li :hover {
