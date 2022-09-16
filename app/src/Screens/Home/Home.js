@@ -30,7 +30,7 @@ class Home extends Component {
             .then(res => res.json())
             .then(data => this.setState({
                 allPopMovies: [data.results.slice(0, 4), data.results.slice(4, 8), data.results.slice(8, 12), data.results.slice(12, 16), data.results.slice(16, 20)],
-                popularMovies: data.results.slice(0, 4),
+                popularMovies: data.results.slice(0, 4), //agregar reverse
                 loader: false,
             }))
 
@@ -94,10 +94,10 @@ class Home extends Component {
                         <p className='button'>Ver Todas</p>
                     </Link>
                     <section className='movie-container'>
-                        {this.state.indexPop === 0 ? (<div className='flechas'><button id="flecha-especial"> <i class="fa-solid fa-chevron-left"></i></button></div>) : (<div className='flechas'><button onClick={() => this.flechaIzquierdaPop()} id="flecha-izquierda"> <i class="fa-solid fa-chevron-left"></i></button></div>)}
+                        {this.state.indexPop === 0 ? (<div className='flechas' id="flecha-izquierda-mover"><button id="flecha-especial"> <i class="fa-solid fa-chevron-left"></i></button></div>) : (<div className='flechas' id="flecha-izquierda-mover"><button onClick={() => this.flechaIzquierdaPop()} id="flecha-izquierda"> <i class="fa-solid fa-chevron-left"></i></button></div>)}
                         {this.state.popularMovies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)}
-                        {this.state.indexPop === 3 ? (<div className='flechas'><button id='flecha-especial'> <i class="fa-solid fa-chevron-right"></i></button></div>
-                        ) : (<div className='flechas'><button onClick={() => this.flechaDerechaPop()} id='flecha-derecha'> <i class="fa-solid fa-chevron-right"></i></button></div>)}
+                        {this.state.indexPop === 3 ? (<div className='flechas' id="flecha-derecha-mover"><button id='flecha-especial'> <i class="fa-solid fa-chevron-right"></i></button></div>
+                        ) : (<div className='flechas' id='flecha-derecha-mover'><button onClick={() => this.flechaDerechaPop()} id='flecha-derecha'> <i class="fa-solid fa-chevron-right"></i></button></div>)}
                     </section>
 
                     <h3>Lo Mejor en Peliculas</h3>

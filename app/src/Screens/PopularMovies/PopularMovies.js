@@ -9,8 +9,10 @@ class PopularMovies extends Component {
         super()
         this.state = {
             movies: [],
+            allMovies: [],
             counter: 1,
-            loader: true
+            loader: true,
+            filterValue: ''
         }
     }
 
@@ -19,6 +21,7 @@ class PopularMovies extends Component {
             .then(res => res.json())
             .then(data => this.setState({
                 movies: data.results,
+                allMovies: data.results,
                 counter: this.state.counter + 1,
                 loader: false
             }))
@@ -33,11 +36,32 @@ class PopularMovies extends Component {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=' + this.state.counter)
             .then(res => res.json())
             .then(data => this.setState({
-                movies: data.results,
+                movies: this.state.movies.concat(data.results),
+                allMovies: this.state.allMovies.concat(data.results),
                 counter: this.state.counter + 1,
                 loader: false
             }))
             .catch(er => console.log(er))
+    }
+
+    cambiarDatos (e) {
+        this.setState({
+            filterValue: e.target.value
+        },
+        ()=> this.filterMovies(this.state.filterValue)
+        )
+    }
+
+    filterMovies (text) {
+        let filteredMovies = this.state.allMovies.filter(movie => movie.title.toLowerCase().includes(text.toLowerCase()))
+
+        this.setState({
+            movies: filteredMovies
+        })
+    }
+
+    evitarSubmit (e) {
+        e.preventDefault()
     }
 
     render() {
@@ -49,19 +73,22 @@ class PopularMovies extends Component {
             : <React.Fragment>
 
                     <h1>Todas las Peliculas Populares</h1>
+                    <form className="movie-filter" onSubmit={(e)=> this.evitarSubmit(e)}>
+                        <input type='text' onChange={(e) => this.cambiarDatos(e)} value={this.state.filterValue} placeholder='Filtrar peliculas por titulo'></input>
+                    </form>
                 <section className="top-content">
-                    <button className="more" onClick={() => this.buscarMas()}>Buscar Mas</button>
-                    <p>Pagina {this.state.counter - 1}</p>
+                    <button className="more" onClick={() => this.buscarMas()}>Cargar Mas</button>
+                        
                 </section>
                 {
                     <section className='movie-container'>
                         {
-                            this.state.movies.slice(0, 18).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                            this.state.movies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
                         }
                     </section>
                 }
                 <section className="top-content">
-                    <button className="more" onClick={() => this.buscarMas()}>Buscar Mas</button>
+                    <button className="more" onClick={() => this.buscarMas()}>Cargar Mas</button>
                     <p>Pagina{this.state.counter - 1}</p>
                 </section>
 

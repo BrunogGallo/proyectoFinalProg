@@ -93,18 +93,17 @@ class TarjetaPeli extends Component {
         return (
             <React.Fragment>
                 <body>
-                    <div className="container">
-                        <div className="card">
-                            <div className="imgbox">
-                                <img className="img-card" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
-                            </div>
-                            
-                            <div className="content">
+                    <Link to={`/movie/id/${this.props.movieData.id}`}>
+
+                        <div className="main_container">
+                            <img className="image" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
+                            <div className="overlay">
                                 <h2 className="tit-card">{this.props.movieData.title}</h2>
                                 <p className="p-card">{this.props.movieData.overview}</p>
                             </div>
+                    
                         </div>
-                    </div>
+                    </Link>
                 </body>
                 
             </React.Fragment>
