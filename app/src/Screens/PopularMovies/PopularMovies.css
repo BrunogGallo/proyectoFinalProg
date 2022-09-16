@@ -3,11 +3,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .top-content button {
     width: fit-content;
     align-self: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
 .top-content p{
@@ -28,3 +31,24 @@
     top: 0;
     left: 0;
     }
+
+.movie-filter {
+    background-color: inherit;
+    text-align: start;
+    margin-left: 20px;
+}
+
+.movie-filter input {
+    border-radius: 8px;
+    background-color: darkgray;
+    color: black;
+    border: none;
+    outline: none;
+    width: 30%;
+    font-size: 17px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.movie-filter input:hover {
+    background-color: white;
+}

@@ -12,7 +12,10 @@ class Navbar extends Component {
     }
 
     cambiarDatos(e) {
-        this.setState({ valor: e.target.value })
+        this.setState({ valor: e.target.value },
+            
+            )
+        //
     }
 
     evitarSubmit(e) {

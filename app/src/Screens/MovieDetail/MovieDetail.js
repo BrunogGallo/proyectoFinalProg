@@ -81,23 +81,25 @@ class MovieDetail extends Component {
 
                 (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
                 : <React.Fragment>
-                    <main className='movie-content'>
-                        <div className='movie-poster'>
+                    <main className='movie-detail-content'>
+                        <div className='movie-detail-poster'>
                             <img src={`https://image.tmdb.org/t/p/w780/${this.state.movies.poster_path}`} alt="foto" /> </div>
 
-                        <div className='movie-data'>
-                            <h2>{this.state.movies.title}</h2>
-                            <p> Rating: {this.state.movies.vote_average}, según la página oficial de IMDB</p>
+                        <div className='movie-detail-data'>
+                            <h1>{this.state.movies.title}</h1>
+                            <p> Rating: {this.state.movies.vote_average}/10</p>
                             <p> Fecha de estreno: {this.state.movies.release_date}</p>
                             <p> Duración: {this.state.movies.runtime} minutos</p>
-                            <p> Géneros: </p> 
-                            <ul>
-                                {this.state.movies.genres.map((genre, idx) => (
-                                    <li key={genre.id + idx}> {`| ${genre.name} |`} </li>
-                                ))
-                                }
-                            </ul>
-                            <p>{this.state.movies.overview}</p>
+                            <div className='genres'>
+                                <p> Géneros:</p>
+                                <ul>
+                                    {this.state.movies.genres.map((genre, idx) => (
+                                        <li key={genre.id + idx}> {`| ${genre.name} |`} </li>
+                                    ))
+                                    }
+                                </ul>
+                            </div>
+                            <p className='overview'>{this.state.movies.overview}</p>
                             <button onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
                         </div>
                     </main>
