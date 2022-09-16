@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import MovieCard from "../../Components/MovieCard/MovieCard";
 import './TopRatedMovies.css'
 import loader from '../../loader.gif'
+import TarjetaPeli from "../../Components/pelitest/TarjetaPelicula";
 
 class TopRatedMovies extends Component {
 
@@ -84,7 +84,7 @@ class TopRatedMovies extends Component {
                                     ?
                                     (<h2> No se ha encontrado ninguna pelicula</h2>)
                                     :
-                                    this.state.movies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                                    this.state.movies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                             }
                         </section>
                     }

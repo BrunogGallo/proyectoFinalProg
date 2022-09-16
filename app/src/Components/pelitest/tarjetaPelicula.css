@@ -1,23 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,100&display=swap');
+
 body{
     margin: 0;
     padding: 0;
-    
 }
 
 .main_container{
     margin: 0 4% 0 0;
     position: relative;
-
-    
-
+    width: 93%;
+    margin-left: 2%;
 }
 
 .image{
     display: flex;
     width: 100%;
     height: auto;
-}
+    border-radius: 5px;
 
+}
 .overlay{
     position: absolute;
     bottom: 0;
@@ -28,11 +29,12 @@ body{
     width: 100%;
     height: 0;
     transition: .5s ease;
-
 }
 
 .main_container:hover .overlay{
     height: 100%;
+    border-radius: 5px;
+    box-shadow: 0rem 0rem 1.5px 1.5px rgb(98, 41, 173);
 
 }
 
@@ -51,4 +53,6 @@ body{
     line-height: 1.1em;
     background: none;
     text-align: center;
+    padding: 0% 4% 0% 4%;
+    font-weight: lighter;
 }

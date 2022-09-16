@@ -1,25 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500&display=swap');
+
 *{
-    color: white;
-    background-color: rgb(16, 15, 19);
+    color: lightgray;
+    background-color: rgb(22, 17, 35);
 }
 
-h1{
+h3{
     padding-left: 1.5%;
+    font-weight:lighter;
+    text-transform: uppercase;
+    color: #9ab;
+    letter-spacing: .06em;
+
 }
 
-.all-button:hover {
-    color: white;
-}
-
-.all-button {
-    width: fit-content;
-}
+.imagen-central {
+    width: 100%;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+} 
 .movie-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around;    
 }
 
+#texto-centrado-en-home {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
+  }
+#texto-centrado-en-home2 {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
+} 
+#texto-centrado-en-home3 {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
+
+}
+em {
+    background: none;
+    font-family: 'Source Serif 4', serif;
+}
+
+/* flechas */
+.flechas {
+    padding-top: 16%;
+}
+#flecha-derecha i{
+    font-size: 22px;
+    color: gray;
+} 
+#flecha-derecha {
+    border:none
+}
+#flecha-derecha-mover {
+    margin-right: 0.5%;
+    margin-left: -0.6%;
+}
+#flecha-derecha i:hover {
+    color: rgba(211, 211, 211, 0.65);
+    cursor: pointer;
+}
+#flecha-izquierda i{
+    font-size: 22px;
+    color: gray;
+}
+#flecha-izquierda {
+    border: none;
+}
+#flecha-izquierda-mover {
+    margin-left: 0.2%;
+    margin-right: -0.1%;
+}
+#flecha-izquierda i:hover {
+    color: lightgray;
+    cursor: pointer;
+}
+#flecha-especial {
+    border: none;
+}
+#flecha-especial i {
+    color: rgba(128, 128, 128, 0.431);
+    font-size: 22px;
+}
+
+
+
+.bg-image {
+    position: relative;
+    text-align: center;
+}
 .imgLoader{
 min-height: 100%;
 min-width: 800px;
@@ -32,7 +121,8 @@ top: 0;
 left: 0;
 }
 
-.button {
+/* probando el boton */
+.buton {
     background-color: white; 
     color: black; 
     padding: 16px 32px;
@@ -47,12 +137,30 @@ left: 0;
     margin-bottom: 2%;
     margin-top: 1%;
     border-radius: 8px;
-    
-    
+}
+.button {
+    color: rgb(153, 170, 187);
+    font-size: 11px;
+    letter-spacing: .075em;
+    background-color: #f44336;
+    text-align: right;
+
+    padding: 16px 32px;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    margin-left: 87%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    border-radius: 8px;
+}
+.button:hover {
+    color: white;
+    cursor: pointer;
 }
 
-
-.button:hover {
+/* probando el boton */
+.buton:hover {
     background-color: #f44336;
     color: white;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import MovieCard from "../../Components/MovieCard/MovieCard";
 import './PopularMovies.css'
 import loader from '../../loader.gif'
+import TarjetaPeli from "../../Components/pelitest/TarjetaPelicula";
 
 class PopularMovies extends Component {
 
@@ -27,6 +27,8 @@ class PopularMovies extends Component {
             }))
             .catch(er => console.log(er))
     }
+
+    buscarMenos
 
 
 
@@ -81,7 +83,7 @@ class PopularMovies extends Component {
                 {
                     <section className='movie-container'>
                         {
-                            this.state.movies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                            this.state.movies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                         }
                     </section>
                 }
