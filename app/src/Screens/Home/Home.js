@@ -24,9 +24,10 @@ class Home extends Component {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
             .then(res => res.json())
             .then(data => this.setState({
-                popularMovies: data.results,
+                popularMovies: data.results.reverse(),
+                
                 loader: false
-            }))
+            },() => console.log(this.state.popularMovies))) 
 
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
             .then(res => res.json())
@@ -49,7 +50,7 @@ class Home extends Component {
                     
                     <section className='movie-container'>
                         {
-                            this.state.popularMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                            this.state.popularMovies.slice(0, 4).map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                         }
                     </section>
                     <Link to="/popular">
@@ -59,7 +60,7 @@ class Home extends Component {
                     
                     <section className='movie-container'>
                         {
-                            this.state.topRatedMovies.slice(0, 6).map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                            this.state.topRatedMovies.slice(0, 4).map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                         }
                     </section>
                     <Link to="/top-rated">
