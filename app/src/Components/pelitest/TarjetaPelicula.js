@@ -7,7 +7,7 @@ class TarjetaPeli extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            favsMessage: 'Agregar a favoritos',
+            favsMessage: 'Agregar a Favoritos',
             description: ''
 
         }
@@ -27,7 +27,7 @@ class TarjetaPeli extends Component {
 
             if (favoritos.includes(this.props.movieData.id)) {
                 this.setState({
-                    favsMessage: 'Quitar de favoritos'
+                    favsMessage: 'Quitar de Favoritos'
                 })
             }
         }
@@ -55,15 +55,14 @@ class TarjetaPeli extends Component {
             // Sacar el id del array: usamos filter.
             favoritos = favoritos.filter(cadaIdDelArray => cadaIdDelArray !== id)
             this.setState({
-                favsMessage: 'Agregar a favoritos',
+                favsMessage: 'Agregar a Favoritos',
             },
-            ()=> window.location.reload(false)
             )
             
         } else {
             favoritos.push(id);
             this.setState({
-                favsMessage: 'Quitar de favoritos',
+                favsMessage:'Quitar de Favoritos' ,
             })
         }
 
@@ -93,17 +92,24 @@ class TarjetaPeli extends Component {
         return (
             <React.Fragment>
                 <body>
-                    <Link to={`/movie/id/${this.props.movieData.id}`}>
-
                         <div className="main_container">
                             <img className="image" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
                             <div className="overlay">
                                 <h2 className="tit-card">{this.props.movieData.title}</h2>
                                 <p className="p-card">{this.props.movieData.overview}</p>
+                                <div className="botones">
+                                    <Link className="linkplus" to={`/movie/id/${this.props.movieData.id}`}>
+                                        <button className="more"> Ver Detalle </button>
+                                    </Link>
+                                    {
+                                        !this.props.fav ?
+                                            <button className="more" onClick={() => this.agregarYQuitarFavoritos(this.props.movieData.id)}>{this.state.favsMessage}</button> :
+                                            <button className="fav" onClick={() => this.props.borrar(this.props.movieData.id)}>Borrar</button>
+                                    }
+                                </div>
                             </div>
                     
                         </div>
-                    </Link>
                 </body>
                 
             </React.Fragment>

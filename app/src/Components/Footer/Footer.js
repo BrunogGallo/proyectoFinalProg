@@ -6,7 +6,7 @@ function Footer() {
     return (
         <React.Fragment>
 
-            <footer>
+            <footer className="footer">
                 <img className="logo" src="./img/logo.jpg" alt="logoFilmoh"/>
                 <img className="logo" src="./img/logo 3.0.jpg" alt="logoTMDB" />
                 <p>Copyright © - Todos los derechos reservados</p>
