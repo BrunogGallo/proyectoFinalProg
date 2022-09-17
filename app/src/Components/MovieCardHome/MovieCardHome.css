@@ -5,10 +5,10 @@ body{
     padding: 0;
 }
 
-.main_container{
+.main_container_home{
     margin: 10px 2px;
     position: relative;
-    width: 18%;
+    width: 22.5%;
 }
 
 .image{
@@ -30,7 +30,7 @@ body{
     transition: .5s ease;
 }
 
-.main_container:hover .overlay{
+.main_container_home:hover .overlay{
     height: 100%;
     border-radius: 5px;
     box-shadow: 0rem 0rem 1.5px 1.5px rgb(98, 41, 173);

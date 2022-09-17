@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import './tarjetaPelicula.css'
+import './MovieCardHome.css'
 import { Link } from 'react-router-dom'
 
-class TarjetaPeli extends Component {
+class MovieCardHome extends Component {
 
     constructor(props) {
         super(props)
@@ -93,7 +93,7 @@ class TarjetaPeli extends Component {
         return (
             <React.Fragment>
 
-                <div className="main_container">
+                <div className="main_container_home">
                     <Link to={`/movie/id/${this.props.movieData.id}`}>
                         <img className="image" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
                         <div className="overlay">
@@ -110,4 +110,4 @@ class TarjetaPeli extends Component {
 }
 
 
-export default TarjetaPeli
+export default MovieCardHome

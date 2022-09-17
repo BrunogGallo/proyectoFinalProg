@@ -100,7 +100,7 @@ class MovieDetail extends Component {
                                 </ul>
                             </div>
                             <p className='overview'>{this.state.movies.overview}</p>
-                            <button onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
+                            <button className='more' onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
                         </div>
                     </main>
                 </React.Fragment>

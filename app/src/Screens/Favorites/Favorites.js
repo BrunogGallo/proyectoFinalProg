@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MovieCard from '../../Components/MovieCard/MovieCard'
+import TarjetaPeli from '../../Components/pelitest/TarjetaPelicula';
 import loader from '../../loader.gif'
 import './favorites.css';
 
@@ -59,10 +59,10 @@ class Favorites extends Component {
             : <div>
 
                 <h2>Favoritos</h2>
-                <section className='movie-container'>
+                <section className='movie-container-all'>
                     
                     {
-                        this.state.movies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                        this.state.movies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                     }
                 </section>
                 

@@ -72,7 +72,7 @@ class PopularMovies extends Component {
             (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
             : <React.Fragment>
 
-                    <h1>Todas las Peliculas Populares</h1>
+                    <h1 className="page-title">Todas las Peliculas Populares</h1>
                     <form className="movie-filter" onSubmit={(e)=> this.evitarSubmit(e)}>
                         <input type='text' onChange={(e) => this.cambiarDatos(e)} value={this.state.filterValue} placeholder='Filtrar peliculas por titulo'></input>
                     </form>
@@ -81,7 +81,7 @@ class PopularMovies extends Component {
                         
                 </section>
                 {
-                    <section className='movie-container'>
+                    <section className='movie-container-all'>
                         {
                             this.state.movies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                         }
@@ -89,7 +89,6 @@ class PopularMovies extends Component {
                 }
                 <section className="top-content">
                     <button className="more" onClick={() => this.buscarMas()}>Cargar Mas</button>
-                    <p>Pagina{this.state.counter - 1}</p>
                 </section>
 
             </React.Fragment>
