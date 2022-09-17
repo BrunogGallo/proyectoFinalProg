@@ -27,7 +27,7 @@ class Navbar extends Component {
     render() {
         return (
             <div className="navbar">
-                <img className="logo" src={'/img/logo.jpg'} alt='logo' />
+                <img to className="logo" src={'/img/logo.jpg'} alt='logo' />
                 <ul id="links">
                     <li><Link to="/"> HOME </Link></li>
                     <li><Link to="/popular"> POPULARES</Link></li>

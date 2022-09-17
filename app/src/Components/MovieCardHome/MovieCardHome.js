@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import './tarjetaPelicula.css'
+import './MovieCardHome.css'
 import { Link } from 'react-router-dom'
 
-class TarjetaPeli extends Component {
+class MovieCardHome extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            favsMessage: 'Agregar a Favoritos',
+            favsMessage: 'Agregar a favoritos',
             description: ''
 
         }
@@ -27,7 +27,7 @@ class TarjetaPeli extends Component {
 
             if (favoritos.includes(this.props.movieData.id)) {
                 this.setState({
-                    favsMessage: 'Quitar de Favoritos'
+                    favsMessage: 'Quitar de favoritos'
                 })
             }
         }
@@ -55,14 +55,14 @@ class TarjetaPeli extends Component {
             // Sacar el id del array: usamos filter.
             favoritos = favoritos.filter(cadaIdDelArray => cadaIdDelArray !== id)
             this.setState({
-                favsMessage: 'Agregar a Favoritos',
+                favsMessage: 'Agregar a favoritos',
             },
             )
 
         } else {
             favoritos.push(id);
             this.setState({
-                favsMessage:'Quitar de Favoritos' ,
+                favsMessage: 'Quitar de favoritos',
             })
         }
 
@@ -91,8 +91,9 @@ class TarjetaPeli extends Component {
     render() {
         return (
             <React.Fragment>
+
                 
-                        <div className="main_container">
+                <div className="main_container_home">
                             <img className="image" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
                             <div className="overlay">
                                 <h2 className="tit-card">{this.props.movieData.title}</h2>
@@ -110,12 +111,11 @@ class TarjetaPeli extends Component {
                             </div>
                     
                         </div>
-                
-                
+
             </React.Fragment>
         )
     }
 }
 
 
-export default TarjetaPeli
+export default MovieCardHome

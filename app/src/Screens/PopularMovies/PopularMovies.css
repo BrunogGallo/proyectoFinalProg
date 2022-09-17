@@ -6,11 +6,25 @@
     align-items: center;
 }
 
-.top-content button {
-    width: fit-content;
-    align-self: center;
-    border-radius: 4px;
-    margin-bottom: 10px;
+.more {
+    color: rgb(153, 170, 187);
+    font-size: 12px;
+    letter-spacing: .075em;
+    background-color: black;
+    text-align: center;
+    padding: 8px 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 16px;
+}
+
+.more:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.page-title {
+    margin-left: 12px;
 }
 
 .top-content p{
@@ -30,7 +44,15 @@
     position:absolute;
     top: 0;
     left: 0;
-    }
+}
+
+.movie-container-all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
 
 .movie-filter {
     background-color: inherit;

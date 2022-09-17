@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieCard from '../../Components/MovieCard/MovieCard';
+import TarjetaPeli from '../../Components/pelitest/TarjetaPelicula';
 import loader from '../../loader.gif';
 import './searchresults.css'
 
@@ -27,12 +27,12 @@ class SearchResults extends Component {
             <React.Fragment>
                 {this.state.loader ? (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />) : (
                 
-                <div className='movie-container'>
+                <div className='movie-container-all'>
                     {this.state.resultMovies.length === 0 &&
                         <p> No hay resultados de busqueda </p>
                     }
                     {
-                        this.state.resultMovies.map((Movie, idx) => <MovieCard key={Movie.title + idx} movieData={Movie} />)
+                        this.state.resultMovies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
                     }
                 </div>
                 )}

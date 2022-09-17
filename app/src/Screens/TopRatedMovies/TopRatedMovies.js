@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import './TopRatedMovies.css'
 import loader from '../../loader.gif'
 import TarjetaPeli from "../../Components/pelitest/TarjetaPelicula";
 
@@ -70,7 +69,7 @@ class TopRatedMovies extends Component {
                 (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
                 : <React.Fragment>
 
-                    <h1>Todas las Mejores Peliculas</h1>
+                    <h1 className="page-title">Todas las Mejores Peliculas</h1>
                     <form className="movie-filter" onSubmit={(e) => this.evitarSubmit(e)}>
                         <input type='text' onChange={(e) => this.cambiarDatos(e)} value={this.state.filterValue} placeholder='Filtrar peliculas por titulo'></input>
                     </form>
@@ -78,7 +77,7 @@ class TopRatedMovies extends Component {
                         <button className="more" onClick={() => this.buscarMas()}>Cargar Mas</button>
                     </section>
                     {
-                        <section className='movie-container'>
+                        <section className='movie-container-all'>
                             {
                                 this.state.movies.length === 0
                                     ?
