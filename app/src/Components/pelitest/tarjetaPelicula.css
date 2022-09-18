@@ -55,3 +55,10 @@ body{
     padding: 0% 4% 0% 4%;
     font-weight: lighter;
 }
+
+
+@media(max-width: 1023px) {
+.main_container {
+    width: 30%;
+}
+}

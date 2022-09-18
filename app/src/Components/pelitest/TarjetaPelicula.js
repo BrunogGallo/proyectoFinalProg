@@ -100,7 +100,6 @@ class TarjetaPeli extends Component {
                             <h2 className="tit-card">{this.props.movieData.title}</h2>
                             <p className="p-card">{this.props.movieData.overview}</p>
                         </div>
-
                     </Link>
                 </div>
 

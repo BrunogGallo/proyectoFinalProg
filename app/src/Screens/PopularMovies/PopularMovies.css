@@ -51,6 +51,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 2%;
 
 }
 
@@ -69,8 +70,31 @@
     width: 30%;
     font-size: 17px;
     font-family: 'Work Sans', sans-serif;
+    padding: 2px;
 }
 
 .movie-filter input:hover {
     background-color: white;
 }
+
+@media(max-width: 1023px) {
+
+    .page-title {
+        font-size: 25px;
+    }
+
+    .movie-filter {
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .movie-filter input {
+        width: 60%;
+        margin-bottom: 15px;
+    }
+
+    .more{
+        padding: 4px 12px;
+    }
+}
+

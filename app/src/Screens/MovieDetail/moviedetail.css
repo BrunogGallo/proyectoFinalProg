@@ -77,3 +77,33 @@
     background-color: rgb(85, 84, 84);
     padding: 6px;
 }
+
+@media(max-width: 1023px) {
+    .movie-detail-poster {
+        width: 100%;
+        text-align: center;
+        background-color: rgb(85, 84, 84);
+        border-radius: 8px;
+    }
+    .movie-detail-poster img{
+        width: 80%;
+    }
+    .movie-detail-data {
+        display: flex;
+        width: 80%;
+        border-radius: 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        padding: 8px 0;
+        margin-top: 10px;
+    }
+    
+    .movie-detail-data h2 {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+}
