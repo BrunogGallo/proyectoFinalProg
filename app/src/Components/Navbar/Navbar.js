@@ -20,10 +20,8 @@ class Navbar extends Component {
 
     evitarSubmit(e) {
         e.preventDefault()
-        if (this.state.valor = "") {
-            alert("Debe estar completo")
-        }
     }
+
     render() {
         return (
             <div className="navbar">

@@ -7,13 +7,13 @@ class SearchResults extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchParams: this.props.match.params,
+            searchParams: this.props.match.params.search,
             resultMovies: [],
             loader: true
         }
     }
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&query=${this.state.searchParams.param}&page=1&include_adult=false`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&query=${this.state.searchParams}&page=1&include_adult=false`)
             .then(res => res.json())
             .then(data => this.setState({
                 resultMovies: data.results,
