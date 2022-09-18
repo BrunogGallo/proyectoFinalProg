@@ -22,16 +22,25 @@ class MovieDetail extends Component {
     }
 
     componentDidMount() {
+        
+        
         fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US`)
             .then(response => response.json())
             .then(data => {
+                
                 this.setState({
                     movies: data,
                     loader: false
                 }, () => console.log(this.state.movies))
+                
             })
 
+
+        
+
     }
+
+
     agregarYQuitarFavoritos(id) {
         // vamos a guardar ids en un array dentro de localStorage.
         //console.log('Agregando y sacando favs');
@@ -53,15 +62,14 @@ class MovieDetail extends Component {
             // Sacar el id del array: usamos filter.
             favoritos = favoritos.filter(cadaIdDelArray => cadaIdDelArray !== id)
             this.setState({
-                favsMessage: 'Agregar a favoritos',
+                favsMessage: 'Agregar a Favoritos',
             },
-                () => window.location.reload(false)
             )
 
         } else {
             favoritos.push(id);
             this.setState({
-                favsMessage: 'Quitar de favoritos',
+                favsMessage:'Quitar de Favoritos' ,
             })
         }
 
@@ -71,6 +79,8 @@ class MovieDetail extends Component {
         localStorage.setItem('favoritos', favsToString)
 
         console.log(localStorage);
+
+        
 
 
     }

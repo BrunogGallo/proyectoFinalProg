@@ -28,7 +28,7 @@ function App() {
             // se las pasa al bhijo. pasas a mano las props. spread opertaor: si props tiene. Por m[as que cambies la url, render siempre te muestra el mismo componente. Cada vez que vos cambies el params, cambie el componente.
             // el param es lo que escribio el usuario. cada vez que escriba algo diferente cambia la key. 
             // cambia la key, se renderiza de nuevo. Si la key es distinta, se renderiza de nuevo. 
-            // eso de los puntitios hace que todas las propiedades del ojbeto prop se pasen al hijo (spread operator.)
+            // eso de los puntitios hace que todas las propiedades del ojbeto prop se pasen al hijo (spread)
 
 
           )} />

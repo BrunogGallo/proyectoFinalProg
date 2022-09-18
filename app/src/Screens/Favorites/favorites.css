@@ -1,3 +1,7 @@
+*{
+    color: white;
+}
+
 .imgLoader{
     min-height: 100%;
     min-width: 800px;

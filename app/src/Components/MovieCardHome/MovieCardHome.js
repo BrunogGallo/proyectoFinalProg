@@ -57,7 +57,6 @@ class MovieCardHome extends Component {
             this.setState({
                 favsMessage: 'Agregar a favoritos',
             },
-                () => window.location.reload(false)
             )
 
         } else {
@@ -93,16 +92,25 @@ class MovieCardHome extends Component {
         return (
             <React.Fragment>
 
+                
                 <div className="main_container_home">
-                    <Link to={`/movie/id/${this.props.movieData.id}`}>
-                        <img className="image" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
-                        <div className="overlay">
-                            <h2 className="tit-card">{this.props.movieData.title}</h2>
-                            <p className="p-card">{this.props.movieData.overview}</p>
+                            <img className="image" src={`https://image.tmdb.org/t/p/w780/${this.props.movieData.poster_path}`} alt={this.props.movieData.title} />
+                            <div className="overlay">
+                                <h2 className="tit-card">{this.props.movieData.title}</h2>
+                                <p className="p-card">{this.props.movieData.overview}</p>
+                                <div className="botones">
+                                    <Link className="linkplus" to={`/movie/id/${this.props.movieData.id}`}>
+                                        <button className="more2"> Ver Detalle </button>
+                                    </Link>
+                                    {
+                                        !this.props.fav ?
+                                            <button className="more2" onClick={() => this.agregarYQuitarFavoritos(this.props.movieData.id)}>{this.state.favsMessage}</button> :
+                                            <button className="fav2" onClick={() => this.props.borrar(this.props.movieData.id)}>Borrar</button>
+                                    }
+                                </div>
+                            </div>
+                    
                         </div>
-
-                    </Link>
-                </div>
 
             </React.Fragment>
         )
