@@ -170,4 +170,17 @@ left: 0;
     color: white;
 }
 
+@media(max-width: 1023px) {
+    .bg-image h1{
+        font-size: 12.5px;
+    }
 
+    .show-all-and-title h3 {
+        font-size: 12px;
+    }
+
+    .show-all-and-title p{
+        padding: 6px 10px;
+    }
+
+}

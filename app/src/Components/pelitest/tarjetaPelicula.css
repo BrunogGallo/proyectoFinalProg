@@ -81,10 +81,10 @@ body{
 
 .more2{
     display: block;
-  width: 100px;
-  height: 55px;
-  border-radius: 30%;
-  color: white;
+    width: 100px;
+    height: 55px;
+    border-radius: 22px;
+    color: white;
   
 }
 
@@ -99,7 +99,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     background: none;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 10%;
 }
 
@@ -110,5 +110,15 @@ body{
 @media(max-width: 1023px) {
     .main_container {
         width: 30%;
+    }
+
+    .more2{
+        width: 60px;
+        height: 40px;
+        font-size: 1.8vw;
+    }
+
+    .p-card {
+        font-size: 1.5vw;
     }
 }

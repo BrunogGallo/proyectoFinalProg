@@ -5,7 +5,7 @@ import TarjetaPeli from "../../Components/pelitest/TarjetaPelicula";
 
 class PopularMovies extends Component {
 
-    constructor() {
+    constructor() { //permite setear el valor inicial del componente, recibes las props que son pasadas al componente
         super()
         this.state = {
             movies: [],
@@ -27,10 +27,6 @@ class PopularMovies extends Component {
             }))
             .catch(er => console.log(er))
     }
-
-    buscarMenos
-
-
 
     buscarMas() {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=' + this.state.counter)
