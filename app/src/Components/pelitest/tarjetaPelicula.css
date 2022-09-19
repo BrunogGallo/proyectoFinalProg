@@ -56,6 +56,10 @@ body{
     text-align: center;
     padding: 0% 4% 0% 4%;
     font-weight: lighter;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 14;
+    -webkit-box-orient: vertical;
 }
 
 
@@ -65,13 +69,18 @@ body{
   height: 50px;
   border-radius: 50%;
   color: white;
+  border: transparent;
+
 }
 
 .fav2:hover{
-    background: white;
-    color: black;
+    background: rgb(244,67,54);    
+    color: white;
     text-decoration: none;
-    
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
+    border: transparent;
+    cursor: pointer;
 }
 
 .icon{
@@ -80,18 +89,22 @@ body{
 }
 
 .more2{
-    display: block;
+  display: block;
   width: 100px;
   height: 55px;
-  border-radius: 30%;
-  color: white;
-  
+  border-radius: 16px;
+  border-color: transparent;
+
 }
 
 .more2:hover{
-    background: white;
-    color: black;
+    background: rgb(244,67,54);
+    color: white;
     text-decoration: none;
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
+    cursor: pointer;
+
 }
 
 .botones{

@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import loader from '../../loader.gif'
 import './moviedetail.css'
 
-
-
 class MovieDetail extends Component {
 
     constructor(props) {
@@ -16,14 +14,12 @@ class MovieDetail extends Component {
                 ]
             },
             loader: true,
-            favsMessage: 'Agregar a favoritos',
+            favsMessage: '',
 
         }
     }
 
     componentDidMount() {
-        
-        
         fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US`)
             .then(response => response.json())
             .then(data => {
@@ -31,13 +27,33 @@ class MovieDetail extends Component {
                 this.setState({
                     movies: data,
                     loader: false
-                }, () => console.log(this.state.movies))
+                }, () => this.chequearFavs (this.state.movies.id)
+                )
                 
+            })        
+
+    }
+
+    chequearFavs(id){
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos'); // Esta posicion puede no estar.
+
+        if (recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage); //transforma texto en array.
+
+            favoritos = storageToArray
+        }
+
+        if (favoritos.includes(id)) {
+            this.setState({
+                favsMessage: 'Quitar de Favoritos'
             })
-
-
-        
-
+        } else {
+            this.setState({
+                favsMessage: 'Agregar a Favoritos'
+            })
+        }
     }
 
 
@@ -80,8 +96,6 @@ class MovieDetail extends Component {
 
         console.log(localStorage);
 
-        
-
 
     }
 
@@ -110,7 +124,7 @@ class MovieDetail extends Component {
                                 </ul>
                             </div>
                             <p className='overview'>{this.state.movies.overview}</p>
-                            <button className='more' onClick={() => this.agregarYQuitarFavoritos(this.state.id)}>{this.state.favsMessage}</button>
+                            <button className='more' onClick={() => this.agregarYQuitarFavoritos(this.state.movies.id)}>{this.state.favsMessage}</button>
                         </div>
                     </main>
                 </React.Fragment>

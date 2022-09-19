@@ -15,7 +15,6 @@ class Navbar extends Component {
         this.setState({ valor: e.target.value },
             
             )
-        //
     }
 
     evitarSubmit(e) {
