@@ -102,6 +102,8 @@ class MovieCardHome extends Component {
                                     <Link className="linkplus" to={`/movie/id/${this.props.movieData.id}`}>
                                         <button className="more2"> Ver Detalle </button>
                                     </Link>
+                                    &nbsp; 
+                                    &nbsp; 
                                     {
                                         !this.props.fav ?
                                             <button className="more2" onClick={() => this.agregarYQuitarFavoritos(this.props.movieData.id)}>{this.state.favsMessage}</button> :

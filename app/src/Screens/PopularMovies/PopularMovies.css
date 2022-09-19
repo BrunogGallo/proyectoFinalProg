@@ -10,12 +10,14 @@
     color: rgb(153, 170, 187);
     font-size: 12px;
     letter-spacing: .075em;
-    background-color: black;
+    background-color: #f44336;
     text-align: center;
     padding: 8px 16px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     border-radius: 16px;
+    border-color: transparent;
+
 }
 
 .more:hover {
@@ -70,6 +72,7 @@
     width: 30%;
     font-size: 17px;
     font-family: 'Work Sans', sans-serif;
+    height: 1.9rem;
     padding: 2px;
 }
 

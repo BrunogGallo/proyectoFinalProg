@@ -15,15 +15,12 @@ class Navbar extends Component {
         this.setState({ valor: e.target.value },
             
             )
-        //
     }
 
     evitarSubmit(e) {
         e.preventDefault()
-        if (this.state.valor = "") {
-            alert("Debe estar completo")
-        }
     }
+
     render() {
         return (
             <div className="navbar">

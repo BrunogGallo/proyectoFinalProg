@@ -56,22 +56,34 @@
 
 .search-bar:hover {
     cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 }
 
 .search-bar:hover .search-bar_input {
     background-color: white;
     color: black;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 }
 
 .search-bar:hover .search-bar_submit {
     background-color: white;
     color: black;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 }
 
 .search-bar:hover #icono_navbar {
     background-color: white;
     color: black;
     cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 }
 
 .logo {
@@ -104,6 +116,8 @@ li a {
 
 li :hover {
     color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 
 }
 

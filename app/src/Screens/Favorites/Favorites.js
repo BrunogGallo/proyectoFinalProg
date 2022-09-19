@@ -80,14 +80,13 @@ class Favorites extends Component {
 
         return (
             this.state.loader ? 
-            <div>
-                <p>No Tienes Favoritos</p>
-                <img src={loader} alt="aguarde mientras carga la pagina"  />
+            <div> 
+                <h1 className="favs-title">No Tienes Favoritos</h1>
             </div>
             
             : <div>
 
-                <h2>Favoritos</h2>
+                <h1 className="favs-title">Favoritos</h1>
                 <section className='movie-container-all'>
                     
                     {
