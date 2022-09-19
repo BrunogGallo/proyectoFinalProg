@@ -23,6 +23,8 @@ class Home extends Component {
         }
     }
 
+    
+
     componentDidMount() {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=0002daaf86f106b6b8226fa0a789628f&language=en-US&page=1')
             .then(res => res.json())
@@ -80,7 +82,7 @@ class Home extends Component {
                 (<img src={loader} alt="aguarde mientras carga la pagina" className='imgLoader' />)
                 : <React.Fragment>
                     <div className='bg-image'>
-                        <img className="imagen-central" src={"/img/bg.jpg"} alt='Home Banner'/>
+                        <img className="imagen-central" src={"/img/bg.jpg"} alt='Home Banner' />
                         <div>
                             <h1 id='texto-centrado-en-home'> Sigue todas las películas que viste. </h1>
                             <h1 id='texto-centrado-en-home2'> Diviertete junto a tus amigos. </h1>
@@ -94,10 +96,37 @@ class Home extends Component {
                         </Link>
                     </div>
                     <section className='movie-container'>
-                        {this.state.indexPop === 0 ? (<div className='flechas' id="flecha-izquierda-mover"><button id="flecha-especial"> <i class="fa-solid fa-chevron-left"></i></button></div>) : (<div className='flechas' id="flecha-izquierda-mover"><button onClick={() => this.flechaIzquierdaPop()} id="flecha-izquierda"> <i class="fa-solid fa-chevron-left"></i></button></div>)}
+                        {this.state.indexPop === 0
+                            ?
+                            (
+                                <div className='flechas' id="flecha-izquierda-mover">
+                                    <button id="flecha-especial">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                </div>
+                            )
+                            :
+                            (<div className='flechas' id="flecha-izquierda-mover">
+                                <button onClick={() => this.flechaIzquierdaPop()} id="flecha-izquierda">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                </div>
+                            )
+                        }
+
                         {this.state.popularMovies.map((Movie, idx) => <MovieCardHome key={Movie.title + idx} movieData={Movie} />)}
-                        {this.state.indexPop === 3 ? (<div className='flechas' id="flecha-derecha-mover"><button id='flecha-especial'> <i class="fa-solid fa-chevron-right"></i></button></div>
-                        ) : (<div className='flechas' id='flecha-derecha-mover'><button onClick={() => this.flechaDerechaPop()} id='flecha-derecha'> <i class="fa-solid fa-chevron-right"></i></button></div>)}
+
+                        {this.state.indexPop === 3 
+                        ? 
+                        (<div className='flechas' id="flecha-derecha-mover">
+                            <button id='flecha-especial'>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        )
+                        :
+                        (<div className='flechas' id='flecha-derecha-mover'>
+                            <button onClick={() => this.flechaDerechaPop()} id='flecha-derecha'> <i class="fa-solid fa-chevron-right"></i></button></div>)}
                     </section>
 
                     <div className='show-all-and-title'>
@@ -112,7 +141,9 @@ class Home extends Component {
                         {this.state.indexRat === 3 ? (<div className='flechas'><button id='flecha-especial'> <i class="fa-solid fa-chevron-right"></i></button></div>) : (<div className='flechas'><button onClick={() => this.flechaDerechaTop()} id='flecha-derecha'> <i class="fa-solid fa-chevron-right"></i></button></div>)}
 
                     </section>
+                    
                 </React.Fragment>
+                
         )
     }
 }

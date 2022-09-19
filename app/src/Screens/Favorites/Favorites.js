@@ -11,7 +11,8 @@ class Favorites extends Component {
         super()
         this.state = {
             movies: [],
-            loader: true
+            loader: true,
+            favoritos: true
             
         }
     }
@@ -47,6 +48,34 @@ class Favorites extends Component {
         
     }
 
+    borrar(id) {
+        // borrar un objeto del array.
+        let favoritos = this.state.movies.filter(oneMovie => oneMovie.id !== id);
+
+        this.setState({
+            movies: favoritos
+        })
+        
+
+        //borrar un id de localStorage
+        let recuperoStorage = JSON.parse(localStorage.getItem('favoritos'));
+        
+
+        let favoritosStorage = recuperoStorage.filter(oneId => oneId !== id);
+
+
+        let favoritosToString = JSON.stringify(favoritosStorage);
+        localStorage.setItem('favoritos', favoritosToString)
+
+        
+        
+    }
+
+    
+
+
+
+
     render() {
 
         return (
@@ -62,7 +91,7 @@ class Favorites extends Component {
                 <section className='movie-container-all'>
                     
                     {
-                        this.state.movies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} />)
+                        this.state.movies.map((Movie, idx) => <TarjetaPeli key={Movie.title + idx} movieData={Movie} fav={this.state.favoritos} borrar={(idx) => this.borrar(idx)}/>)
                     }
                 </section>
                 

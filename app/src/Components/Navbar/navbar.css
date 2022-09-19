@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap');
 
+.logo {
+    width: 6%
+}
 .navbar {
     display: flex;
     font-family: 'Work Sans', sans-serif;
@@ -10,6 +13,7 @@
     top: 0;
     left: 0;
     background-color: rgb(14, 13, 19);
+    padding: 6px;
 }
 
 .search-bar {
@@ -115,4 +119,41 @@ li :hover {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 
+}
+
+@media(max-width: 1023px) {
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    li a{
+        font-size: 9px;
+        padding: 3px;
+    }
+
+    .navbar {
+        padding-bottom: 5px;
+    }
+
+    ul {
+        margin-left: 0;
+    }
+
+    .logo{
+        width: 10%;
+    }
+
+    .search-bar {
+        margin-left: 0;
+        width: 25%;
+    }
+
+    .search-bar_input {
+        border-radius: 1.625rem;
+        padding: 0.3rem 2rem 0.3rem 0.6rem;
+        font-size: 8px;
+    }
 }

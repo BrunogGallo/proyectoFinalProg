@@ -33,7 +33,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      <footer><Footer /></footer>
+      <Footer />
     </React.Fragment>
   );
 }
