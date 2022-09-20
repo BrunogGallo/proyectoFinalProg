@@ -33,7 +33,6 @@ class MovieDetail extends Component {
             })        
 
     }
-<<<<<<< HEAD
 
     chequearFavs(id){
         let favoritos = [];
@@ -41,15 +40,6 @@ class MovieDetail extends Component {
 
         if (recuperoStorage !== null) {
 
-=======
-
-    chequearFavs(id){
-        let favoritos = [];
-        let recuperoStorage = localStorage.getItem('favoritos'); // Esta posicion puede no estar.
-
-        if (recuperoStorage !== null) {
-
->>>>>>> 735bbf6cb9498500f12a22f0e6e3f8d9d6e50ebf
             let storageToArray = JSON.parse(recuperoStorage); //transforma texto en array.
 
             favoritos = storageToArray
